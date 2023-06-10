@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../../styles/colors";
 import BoldText from "../BoldText/BoldText";
 

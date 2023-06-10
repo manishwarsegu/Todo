@@ -1,6 +1,6 @@
 import * as LocalAuthentication from 'expo-local-authentication';
 import { useEffect, useState } from 'react';
-import { Button, Linking, Modal, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Linking, Modal, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { colors } from '../../styles/colors';
 import PrimaryButton from '../../components/Button/PrimaryButton';
 import BoldText from '../../components/BoldText/BoldText';
@@ -112,8 +112,7 @@ function BiometricAuthScreen() {
         ) : null}
         {resultMessage ? <BoldText description={resultMessage} /> : null}
       </View>
-    </Modal
-    >
+    </Modal>
   );
 }
 
@@ -123,22 +122,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 22,
-  },
-  button: {
-    borderRadius: 10,
-    padding: 10,
-    backgroundColor: colors.primaryColor
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 5,
   },
 });
 
