@@ -17,8 +17,12 @@ function PrimaryButton({ text, onPress }) {
 
 const styles = StyleSheet.create({
     button: {
-        borderRadius: 10,
-        padding: 10,
+        borderRadius: 25,
+        paddingVertical: 15,
+        paddingHorizontal: 25,
+        minWidth: 80,
+        maxHeight: 60,
+        textAlign: 'center',
         backgroundColor: colors.primaryColor
     },
 })

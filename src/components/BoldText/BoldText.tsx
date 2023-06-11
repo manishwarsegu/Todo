@@ -11,6 +11,7 @@ function BoldText({ description, additionalStyles } : {description: string, addi
 const styles = StyleSheet.create({
     textStyle: {
         fontWeight: 'bold',
+        fontSize: 16,
         textAlign: 'center',
         marginVertical: 5,
       },

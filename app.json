@@ -29,7 +29,8 @@
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT"
-      ]
+      ],
+      "package": "com.manishwar.Todo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
