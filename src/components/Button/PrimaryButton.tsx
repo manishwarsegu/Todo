@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
-import { colors } from "../../styles/colors";
+import { colors } from "../../styles/globalColors";
 import BoldText from "../BoldText/BoldText";
 
 function PrimaryButton({ text, onPress }) {

@@ -1,7 +1,7 @@
 import * as LocalAuthentication from 'expo-local-authentication';
 import { useEffect, useState } from 'react';
 import { Linking, Modal, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { colors } from '../../styles/colors';
+import { colors } from '../../styles/globalColors';
 import PrimaryButton from '../../components/Button/PrimaryButton';
 import BoldText from '../../components/BoldText/BoldText';
 
