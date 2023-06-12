@@ -2,7 +2,7 @@ import { Alert, KeyboardAvoidingView, Platform, StyleSheet, TextInput, View } fr
 import PrimaryButton from "../Button/PrimaryButton";
 import { colors } from "../../styles/globalColors";
 import { getPlatform } from "../../utils/commonUtils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { todoStore } from "../../store/store";
 
 function BottomInput() {
@@ -14,6 +14,10 @@ function BottomInput() {
 
     const [text, setText] = useState('');
     const [updateText, setUpdateText] = useState('');
+
+    useEffect(() => {
+        setUpdateText(aboutToUpdateText);
+    }, [aboutToUpdateText])
 
     function addData() {
         if (!text) {
@@ -36,15 +40,15 @@ function BottomInput() {
         <KeyboardAvoidingView
             style={styles.bottomContainer}
             behavior={getPlatform() === 'ios' ? 'padding' : 'height'}
-            keyboardVerticalOffset={Platform.select({ios: 200, android: 500})}
+            keyboardVerticalOffset={Platform.select({ios: 60, android: 500})}
         >
             {editMode ?
                 <>
                     <TextInput
                         placeholder={aboutToUpdateText || 'Enter here'}
-                        value={updateText || aboutToUpdateText}
+                        value={updateText}
                         multiline={true}
-                        style={{ maxWidth: '60%' }}
+                        style={{ width: '70%' }}
                         onChangeText={(data) => setUpdateText(data)}
                     />
                     <PrimaryButton
@@ -56,7 +60,7 @@ function BottomInput() {
                         placeholder={'Enter here'}
                         value={text}
                         multiline={true}
-                        style={{ maxWidth: '60%' }}
+                        style={{ width: '70%' }}
                         onChangeText={(data) => setText(data)}
                     />
                     <PrimaryButton

@@ -23,13 +23,13 @@ function TodoList() {
                         ]}>
                             <Text style={{ flexBasis: 230 }}>{text}</Text>
                             <TouchableOpacity onPress={() => updateEditModeData(true, text, id)}>
-                                <Text>EDIT</Text>
+                                <Text style={{minHeight: 20}}>EDIT</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => {
                                 updateEditModeData(false, '', '');
                                 deleteItem(id);
                                 }}>
-                                <Text>REMOVE</Text>
+                                <Text style={{minHeight: 20}}>REMOVE</Text>
                             </TouchableOpacity>
                         </View>)
                 }}
