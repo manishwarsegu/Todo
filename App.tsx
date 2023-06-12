@@ -14,7 +14,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <BiometricAuthScreen />
+      {/* It's a full screen modal, on successful local authentication the modal goes away and todoList gets displayed */}
+      <BiometricAuthScreen /> 
+      {/* renders todoList and has textinput, here user can perform CRUD operations */}
       <TodoContainer />
     </SafeAreaView>
   );

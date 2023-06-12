@@ -17,9 +17,11 @@ interface TodoState {
 }
 
 export const todoStore = create(
+    //persist would store the state data locally using asyncStorage
     persist(
         (set) => ({
-            todoListItems: [],
+            todoListItems: [], // state of entire Todo list
+            // helper for updating a todo list item text
             editModeData: {
                 editMode: false,
                 aboutToUpdateText: '',

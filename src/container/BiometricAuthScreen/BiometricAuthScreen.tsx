@@ -58,6 +58,7 @@ function BiometricAuthScreen() {
     checkSupportedAuthentication();
   }, []);
 
+  // set result message to inform user about authentication success/failure
   let resultMessage;
   switch (result) {
     case EResult.CANCELLED:
@@ -77,6 +78,7 @@ function BiometricAuthScreen() {
       break;
   }
 
+  // set description for user to understand what all kinds of authentications are available
   let description;
   if (facialRecognitionAvailable && fingerprintAvailable && irisAvailable) {
     description = 'Unlock with Face ID, touch ID or iris ID';
