@@ -1,6 +1,7 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../../styles/globalColors";
 import BoldText from "../BoldText/BoldText";
+import { hp, spH, spV, wp } from "../../utils/normalize";
 
 function PrimaryButton({ text, onPress }) {
     return (
@@ -18,10 +19,8 @@ function PrimaryButton({ text, onPress }) {
 const styles = StyleSheet.create({
     button: {
         borderRadius: 25,
-        paddingVertical: 15,
-        paddingHorizontal: 25,
-        minWidth: 80,
-        maxHeight: 60,
+        paddingVertical: spV(2),
+        paddingHorizontal: spH(25),
         textAlign: 'center',
         backgroundColor: colors.primaryColor
     },

@@ -1,4 +1,5 @@
 import { StyleSheet, Text } from "react-native";
+import { fp, spV } from "../../utils/normalize";
 
 function BoldText({ description, additionalStyles } : {description: string, additionalStyles?: object}) {
     return (
@@ -11,9 +12,9 @@ function BoldText({ description, additionalStyles } : {description: string, addi
 const styles = StyleSheet.create({
     textStyle: {
         fontWeight: 'bold',
-        fontSize: 16,
+        fontSize:fp(14),
         textAlign: 'center',
-        marginVertical: 5,
+        marginVertical: spV(5),
       },
 });
 

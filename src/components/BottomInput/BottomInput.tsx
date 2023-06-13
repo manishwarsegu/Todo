@@ -1,9 +1,10 @@
-import { Alert, KeyboardAvoidingView, Platform, StyleSheet, TextInput } from "react-native";
+import { Alert, KeyboardAvoidingView, StyleSheet, TextInput } from "react-native";
 import PrimaryButton from "../Button/PrimaryButton";
 import { colors } from "../../styles/globalColors";
 import { getPlatform } from "../../utils/commonUtils";
 import { useEffect, useState } from "react";
 import { todoStore } from "../../store/store";
+import { hp, spH } from "../../utils/normalize";
 
 function BottomInput() {
     //addItem would add a new listItem
@@ -46,7 +47,7 @@ function BottomInput() {
         <KeyboardAvoidingView
             style={styles.bottomContainer}
             behavior={getPlatform() === 'ios' ? 'padding' : 'height'}
-            keyboardVerticalOffset={Platform.select({ios: 60, android: 500})}
+            keyboardVerticalOffset={hp(50)}
         >
             {editMode ?
                 <>
@@ -54,7 +55,7 @@ function BottomInput() {
                         placeholder={aboutToUpdateText || 'Enter here'}
                         value={updateText}
                         multiline={true}
-                        style={{ width: '70%' }}
+                        style={{ width: '60%' }}
                         onChangeText={(data) => setUpdateText(data)}
                     />
                     <PrimaryButton
@@ -66,7 +67,7 @@ function BottomInput() {
                         placeholder={'Enter here'}
                         value={text}
                         multiline={true}
-                        style={{ width: '70%' }}
+                        style={{ width: '60%' }}
                         onChangeText={(data) => setText(data)}
                     />
                     <PrimaryButton
@@ -88,13 +89,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: colors.white,
         width: '100%',
-        height: 'auto',
-        minHeight: 80,
-        paddingHorizontal: 20,
+        minHeight: hp(60),
+        paddingHorizontal: spH(20),
         borderRadius: 20,
         alignSelf: 'flex-end',
         position: 'absolute',
-        bottom: getPlatform() === 'android' ? 10 : 0,
+        bottom: getPlatform() === 'android' ? hp(10) : 0,
     }
 })
 
